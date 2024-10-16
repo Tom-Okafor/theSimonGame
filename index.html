@@ -20,12 +20,20 @@
         </p>
 
         <div class="btnParent"><button class="start">START SIMON</button></div>
-        <main>
+        <main class="hideMain">
+            <div class="banner">
+                <span class="highscore">HIGHSCORE</span>
+                <span class="figures">0</span>
+            </div>
             <div class="container">
                 <button class="child" id="green"></button>
                 <button class="child" id="red"></button>
                 <button class="child" id="yellow"></button>
                 <button class="child" id="blue"></button>
+            </div>
+            <div class="controls">
+                <button id="pause">Pause</button>
+                <button id="restart"></button>
             </div>
         </main>
         <footer>©notesTech <span id="year">2024</span></footer>

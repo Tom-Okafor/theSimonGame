@@ -6,8 +6,10 @@
 }
 
 body {
-    background-color: #00000077;
-    min-height: 100%;
+    background-color: #00000097;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -63,7 +65,10 @@ h1 .span {
 }
 main {
     display: grid;
-    place-content: center;
+    place-items: center;
+}
+.hideMain {
+    display: none;
 }
 
 .start {
@@ -92,6 +97,51 @@ main {
     width: 100%;
     display: grid;
     place-content: center;
+}
+
+.banner {
+    width: clamp(200px, 50vw, 500px);
+    height: 40px;
+    outline: 2px solid #00000097;
+    outline-offset: 4px;
+    margin: 25px 0 15px 0;
+    border-radius: 5px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff99;
+    font-family: Georgia;
+    font-weight: 900;
+    font-size: 1.1rem;
+    box-shadow: 0 0 3px 2px #000;
+}
+
+.figures {
+    border-left: 2px solid #00000077;
+    height: 35px;
+    padding-left: 15px;
+    display: grid;
+    place-content: center;
+}
+
+.controls button {
+    background: transparent;
+    outline: 0;
+    border: 0;
+    color: #ffffffcc;
+    font-family: Georgia;
+    font-weight: 700;
+    box-shadow: 1.5px 1px 5px 1px #222;
+    border-radius: 2px;
+    margin: 10px 5px;
+
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+#restart {
+    display: none;
 }
 
 footer {
