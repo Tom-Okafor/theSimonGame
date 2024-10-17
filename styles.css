@@ -20,9 +20,58 @@ h1 {
     color: #0000009d;
 }
 
+.shrink {
+    animation-name: shrink;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
 h1 .span {
     font-size: 5rem;
     color: #ffffffcc;
+}
+
+.shrink1 {
+    animation-name: shrink1;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shrink {
+    50% {
+        opacity: 0;
+        font-size: 2rem;
+        text-align: center;
+    }
+    51% {
+        opacity: 0;
+        text-align: left;
+    }
+
+    100% {
+        text-align: left;
+        font-size: 1rem;
+        opacity: 1;
+    }
+}
+
+@keyframes shrink1 {
+    50% {
+        opacity: 0;
+        font-size: 5rem;
+        text-align: center;
+    }
+    51% {
+        opacity: 0;
+        text-align: left;
+    }
+    100% {
+        text-align: left;
+        font-size: 1rem;
+        opacity: 1;
+    }
 }
 
 .details {
@@ -31,9 +80,38 @@ h1 .span {
     font-weight: 700;
     padding: 20px;
     padding-inline: 15px;
-    border: 2px solid #ffffffcc;
-    border-inline: 0;
-    line-height: 1.3rem;
+    line-height: 1.2rem;
+    max-width: 65ch;
+}
+
+hr {
+    height: 2px;
+    background-color: #ffffffcc;
+}
+
+.hideDetails {
+    animation-name: hideDetails;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideDetails {
+    95% {
+        opacity: 0;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.alert {
+    font-family: serif;
+    color: #ffffffcc;
+    padding: 5px;
+    text-shadow: 1px 3px 2px #0000009d;
 }
 
 .container {
@@ -63,31 +141,57 @@ h1 .span {
 .child:nth-child(4) {
     background: blue;
 }
+
+.flash {
+    opacity: 0.1;
+}
 main {
     display: grid;
     place-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .hideMain {
     display: none;
 }
 
+.showMain {
+    animation-name: showMain;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showMain {
+    from {
+        display: grid;
+        opacity: 0;
+    }
+    to {
+        display: grid;
+        opacity: 1;
+    }
+}
+
 .start {
     font-family: Serif;
     font-weight: 600;
-    padding: 10px;
+    font-size: 1rem;
+    padding: 10px 20px;
     border-radius: 5px;
     border: 0;
     outline: 0.5px solid #00000099;
     outline-offset: 3px;
     background: transparent;
     box-shadow: 0 0 4px 2px #222;
-    margin: 20px 0 0 0;
+    margin: 20px 0 20px 0;
     color: #ffffffcc;
     transition: all 300ms ease;
 }
 
 .start:hover {
-    padding: 11px;
+    padding: 11px 21px;
+    letter-spacing: 1px;
     border-radius: 6px;
     outline: 0;
     box-shadow: 0 0 3px 0.5px #222;
@@ -100,7 +204,7 @@ main {
 }
 
 .banner {
-    width: clamp(200px, 50vw, 500px);
+    width: clamp(200px, 50vw, 350px);
     height: 40px;
     outline: 2px solid #00000097;
     outline-offset: 4px;
@@ -135,17 +239,156 @@ main {
     box-shadow: 1.5px 1px 5px 1px #222;
     border-radius: 2px;
     margin: 10px 5px;
-
     padding: 10px 20px;
     font-size: 0.95rem;
+}
+
+.controls button:hover {
+    animation: border 500ms ease forwards;
+}
+
+@keyframes border {
+    25% {
+        border-right: 3px solid #ffffff99;
+    }
+    50% {
+        border-right: 3px solid #ffffff99;
+        border-bottom: 3px solid #ffffff99;
+    }
+    75% {
+        border-right: 3px solid #ffffff99;
+        border-bottom: 3px solid #ffffff99;
+        border-left: 3px solid #ffffff99;
+    }
+    100% {
+        border: 3px solid #ffffff99;
+    }
 }
 
 #restart {
     display: none;
 }
 
+.imageHolder img {
+    width: clamp(250px, 70vw, 800px);
+}
+
+.imageHolder {
+    display: grid;
+    place-items: center;
+}
+
 footer {
     font-family: Monospace;
     color: #ffffffcc;
     margin-top: auto;
+}
+
+@media only screen and (min-width: 800px) {
+    .span {
+        font-size: 7rem;
+        letter-spacing: 4px;
+    }
+
+    h1 {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        letter-spacing: 2px;
+        word-spacing: 5px;
+    }
+
+    .details {
+        padding: 35px 0;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        word-spacing: 3px;
+        margin-inline: auto;
+    }
+
+    .start {
+        font-size: 1.1rem;
+        padding: 15px 30px;
+        border-radius: 5px;
+        outline: 0.5px solid #00000099;
+        outline-offset: 3px;
+        background: transparent;
+        box-shadow: 0 0 4px 2px #222;
+        margin-top: 40px;
+    }
+
+    .banner {
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    .figures {
+        height: 35px;
+        padding-left: 50px;
+        display: grid;
+        place-content: center;
+        font-size: 1.5rem;
+    }
+
+    .controls button {
+        border-radius: 3px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+
+    .container {
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .child {
+        width: 170px;
+        height: 170px;
+        border-radius: 15px;
+    }
+
+    .alert {
+        font-size: 1.3rem;
+        padding-top: 15px;
+        text-shadow: 3px 5px 3px #0000009d;
+    }
+
+    @keyframes shrink {
+        50% {
+            opacity: 0;
+            font-size: 2rem;
+            text-align: center;
+        }
+        51% {
+            opacity: 0;
+            text-align: left;
+        }
+
+        100% {
+            text-align: left;
+            font-size: 2rem;
+            opacity: 1;
+        }
+    }
+
+    @keyframes shrink1 {
+        50% {
+            opacity: 0;
+            font-size: 7rem;
+            text-align: center;
+        }
+        51% {
+            opacity: 0;
+            text-align: left;
+        }
+        100% {
+            text-align: left;
+            font-size: 2rem;
+            opacity: 1;
+        }
+    }
+
+    footer {
+        font-size: 1.2rem;
+        padding-left: 10px;
+    }
 }
