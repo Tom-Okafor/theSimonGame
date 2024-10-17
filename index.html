@@ -8,21 +8,30 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <h1>
-            <span>THE</span> <span class="span">SIMON</span> <span>GAME</span>
-        </h1>
+        <h1>THE <span class="span">SIMON</span> GAME</h1>
 
+        <hr />
         <p class="details">
-            Exercitation enim labore aliqua quis non sunt dolore culpa
-            exercitation amet esse irure cupidatat. Commodo velit tempor sit
-            cupidatat cupidatat tempor in do. Sit eu laborum ex esse ullamco
-            pariatur minim minim dolore duis anim.
+            Get ready to challenge your memory and reflexes with the classic
+            Simon Game!
+            <br />This iconic game tests your ability to repeat a randomly
+            generated sequence of colors and sounds.<br /><br />
+            Simon starts with a simple sequence, then adds one color/sound each
+            round, pushing your memory to the limit.<br />
+            Repeat the sequence correctly to progress, but make one mistake and
+            it's game over! <br /><br />
+            Originally released in 1978, Simon has remained a beloved game for
+            generations, promoting cognitive development, hand-eye coordination,
+            and healthy competition. Can you beat Simon?
         </p>
+
+        <hr />
 
         <div class="btnParent"><button class="start">START SIMON</button></div>
         <main class="hideMain">
+            <h3 class="alert"></h3>
             <div class="banner">
-                <span class="highscore">HIGHSCORE</span>
+                <span class="score">SCORE</span>
                 <span class="figures">0</span>
             </div>
             <div class="container">
@@ -32,10 +41,11 @@
                 <button class="child" id="blue"></button>
             </div>
             <div class="controls">
-                <button id="pause">Pause</button>
+                <button id="begin">Begin</button>
                 <button id="restart"></button>
             </div>
         </main>
+
         <footer>©notesTech <span id="year">2024</span></footer>
         <script src="index.js"></script>
     </body>
