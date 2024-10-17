@@ -32,8 +32,7 @@
             document.querySelector(".alert").innerText = "";
             let level = 1;
             setTimeout(() => {
-                          createPattern(level);
-
+                createPattern(level);
             }, 1000);
         }
     }
@@ -136,5 +135,4 @@
             document.querySelector(".figures").innerText = 0;
         }, 300);
     }
-
 })();

@@ -75,7 +75,7 @@ h1 .span {
 }
 
 .details {
-    font-family: Monospace;
+    font-family: "Chakra Petch", Sans-Serif;
     color: #0000009d;
     font-weight: 700;
     padding: 20px;
@@ -279,7 +279,7 @@ main {
 }
 
 footer {
-    font-family: Monospace;
+    font-family: "Chakra Petch", Sa;
     color: #ffffffcc;
     margin-top: auto;
 }
